@@ -1,44 +1,37 @@
 <script setup>
 import { reactive, ref, provide } from "vue";
-import {course} from './data/course.js'
-import PersonComponent from "./components/PersonComponent.vue";
-import NameComponent from "./components/NameComponent.vue";
-import TextComponent from "./components/TextComponent.vue";
-import NameComponentX from "./components/NameComponentX.vue";
-import CheckBox from "./components/CheckBox.vue";
-import Radio from "./components/Radio.vue";
-import ComponentA from "./components/ComponentA.vue";
-
-const person = reactive({
-  name: "jone doe",
-  email: "jone@doe.com",
-});
-
-const fname = ref("Jone");
-const lname = ref("Doe");
-
-const fulName = ref("Jone Doe");
-const fulEmail = ref("jone@doe.com");
-
-const taskDone = ref(false);
-
-const fruit = ref("apple");
-
-
-
-
+import Sidebar from "./components/Sidebar.vue";
 </script>
 
-<template> 
-  <div>
+<template>
+  <!-- header start -->
+  <section class="container mx-auto">
+    <header class="">
+      <div class="bg-black">
+        <h1 class="text-white px-5 py-3">WonderFul Blog Site</h1>
+      </div>
+    </header>
+  </section>
+  <!-- header end -->
+
+  <section class="container mx-auto flex">
+    <!-- sidbar start -->
+    <div>
+      <aside class="md:w-[300px] sm:w-[150px] bg-gray-100 h-screen pt-5">
+        <Sidebar></Sidebar>
+      </aside>
+    </div>
+    <!-- sidbar end -->
+
+    <!-- main content start -->
+    <div class="w-full bg-gray-50 h-dvh pt-5">
+      <router-view></router-view>
+    </div>
+    <!-- main content end -->
+
+    <!-- <RightSidebar></RightSidebar> -->
+    <router-view name="right"></router-view>
+
     
-     <label for="" class="text-2xl">From Component</label>
-     <h1 class="font-bold underline underline-offset-2">Props drilling</h1>
-     <p>
-      <ComponentA />
-     </p>
-     <p>
-      
-     </p>
-  </div>
+  </section>
 </template>
