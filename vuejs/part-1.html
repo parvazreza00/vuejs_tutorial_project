@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vuejs part 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  </head>
+  <body>
+
+    <h1>Hello Vuejs!</h1>
+
+    <div id="app">
+
+      <h2>{{ message }}</h2>
+
+      <input type="text" v-model="name">
+      <p>Name is: {{ name }}</p>
+      <input type="checkbox" v-model="status">
+      Status is : {{ status }}
+      <br>
+      <input type="checkbox" value="Rakib" v-model="names">Rakib
+      <input type="checkbox" value="Hasan" v-model="names">Hasan
+      <input type="checkbox" value="Tomal" v-model="names">Tomal
+      <input type="checkbox" value="Taleb" v-model="names">Taleb
+      <p>Names : {{ names.join(', ') }}</p>
+      <br>
+      <input type="radio" value="Nice" v-model="feeling">Nice
+      <input type="radio" value="Great" v-model="feeling">Great
+      <input type="radio" value="Good" v-model="feeling">Good
+      <p>Feelings : {{ feeling }}</p>
+
+    </div>
+
+    
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Vue!",
+          name:"",
+          status: true,
+          names: ["Rakib"],
+          feeling: "Nice",
+        },
+      });
+    </script>
+  </body>
+</html>
